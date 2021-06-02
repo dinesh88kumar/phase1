@@ -1,3 +1,4 @@
+import 'package:boova_console/Responsive/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hovering/hovering.dart';
@@ -17,6 +18,25 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    return Responsive(
+        mobile: Text('working'),
+        tab: Text('Working'),
+        maxViewDesktop: Maxwindow(),
+        minViewDesktop: Text('working'));
+  }
+}
+
+class Maxwindow extends StatefulWidget {
+  const Maxwindow({Key? key}) : super(key: key);
+
+  @override
+  _MaxwindowState createState() => _MaxwindowState();
+}
+
+class _MaxwindowState extends State<Maxwindow> {
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -26,7 +46,7 @@ class _MyAppState extends State<MyApp> {
           child: Row(
             children: [
               SizedBox(
-                width: 20,
+                width: size.width / 40,
               ),
               Container(
                 decoration: BoxDecoration(
@@ -48,7 +68,7 @@ class _MyAppState extends State<MyApp> {
                     color: Colors.black, fontSize: 35),
               ),
               SizedBox(
-                width: 380,
+                width: size.width / 8,
               ),
               HoverWidget(
                 child: Text(
@@ -64,7 +84,7 @@ class _MyAppState extends State<MyApp> {
                 onHover: (e) {},
               ),
               SizedBox(
-                width: 20,
+                width: size.width / 40,
               ),
               HoverWidget(
                 child: Text(
@@ -80,7 +100,7 @@ class _MyAppState extends State<MyApp> {
                 onHover: (e) {},
               ),
               SizedBox(
-                width: 20,
+                width: size.width / 40,
               ),
               HoverWidget(
                 child: Text(
@@ -96,7 +116,7 @@ class _MyAppState extends State<MyApp> {
                 onHover: (e) {},
               ),
               SizedBox(
-                width: 20,
+                width: size.width / 40,
               ),
               HoverWidget(
                 child: Text(
@@ -112,7 +132,7 @@ class _MyAppState extends State<MyApp> {
                 onHover: (e) {},
               ),
               SizedBox(
-                width: 20,
+                width: size.width / 40,
               ),
               HoverWidget(
                 child: Text(
@@ -128,7 +148,7 @@ class _MyAppState extends State<MyApp> {
                 onHover: (e) {},
               ),
               SizedBox(
-                width: 20,
+                width: size.width / 40,
               ),
               HoverWidget(
                 child: Text(
@@ -144,7 +164,7 @@ class _MyAppState extends State<MyApp> {
                 onHover: (e) {},
               ),
               SizedBox(
-                width: 60,
+                width: size.width / 40,
               ),
               HoverWidget(
                 child: Container(
